@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projetcs</title>
+</head>
+<body>
+    <h1> Welcome to my project's page! </h1>
+    <a href="/projects/new"> Add a new project </a>
+
+    <% for(let project of allProjects) { %>
+        <ul>
+            <ul>
+                <li> Name: <%= project.project_name %> </li>
+                <li> Description: <%= project.project_description %> </li>
+                <li> Powered By <%= project.project_languages %> </li>
+                <li> <a href="/projects/<%=project._id%>"> See More</a></li>
+            </ul>
+        </ul>
+     <% } %>
+
+</body>
+</html>
+
+
+
