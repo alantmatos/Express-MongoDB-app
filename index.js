@@ -62,6 +62,12 @@ app.post("/projects", async (req, res) => {
     res.redirect(`/projects/${newProject._id}`)
 });
 
+app.delete("/projects/:id", async (req, res) => {
+    const {id} = req.params;
+    const deleteProject = await Project.findOneAndDelete(id)
+    res.redirect("/projects")
+})
+
 // app.delete('/projects/:id', async (req, res) => {
 //     const { id } = req.params;
 //     const project = await Project.findById(id)
