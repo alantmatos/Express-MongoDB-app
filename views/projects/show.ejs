@@ -24,19 +24,24 @@
             </li>
             <li> <a href="<%=project.project_frontend%>"> Frontend Repo </a></li>
             <li> <a href="<%=project.project_backend%>"> Backend Repo </a></li>
+            <li> <a href="<%=project.project_demo%>"> Project Demo </a></li>
         </ul>
     </div>
 
-    <div> <a href="/projects"> Go Back</a> </div>
-    <div> <a href="/projects/<%=project._id%>/edit"> Edit </a> </div>
-    <div>
-        <form action="/projects/<%=project._id%>?_method=DELETE" method="POST">
-            <button> Delete </button>
-        </form>
-    </div>
+    <div> <form action="/projects"><button> Go Back</button></form> </div>
+    <div> <form action="/projects/<%=project._id%>/edit"><button> Edit </button></form> </div>
+    <div> <form action="/projects/<%=project._id%>?_method=DELETE" method="POST"><button> Delete </button></form> </div>
 
     <div> <img src=<%=project.project_cover%>> </div>
 
 </body>
 
 </html>
+
+
+
+<!-- <a href="/projects"> Go Back</a> 
+    <a href="/projects/<%=project._id%>/edit"> Edit </a> 
+
+
+-->
