@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <%= project.project_name %> </title>
+    <title>
+        <%= project.project_name %>
+    </title>
 </head>
+
 <body>
 
     <h1> Welcome to <%= project.project_name %>'s page. </h1>
-    
+
     <div>
         <ul>
-            <li> Name: <%= project.project_name %> </li>
-            <li> Description: <%= project.project_description %> </li>
-            <li> Powered By <%= project.project_languages %> </li>        
+            <li> Name: <%= project.project_name %>
+            </li>
+            <li> Description: <%= project.project_description %>
+            </li>
+            <li> Powered By <%= project.project_languages %>
+            </li>
             <li> <a href="<%=project.project_frontend%>"> Frontend Repo </a></li>
             <li> <a href="<%=project.project_backend%>"> Backend Repo </a></li>
         </ul>
-    </div> 
+    </div>
 
-    <div>  <a href="/projects"> Go Back</a> </div>
-    <div>  <a href="/projects/<%=project._id%>/edit"> Edit </a> </div>
-    <div> <a href="/projects/<%=project._id%>"> Delete this project</a> </div>
+    <div> <a href="/projects"> Go Back</a> </div>
+    <div> <a href="/projects/<%=project._id%>/edit"> Edit </a> </div>
+    <div>
+        <form action="/projects/<%=project._id%>?_method=DELETE" method="POST">
+            <button> Delete </button>
+        </form>
+    </div>
 
-    <div> <img src=<%=project.project_cover%>> </div>   
-    
+    <div> <img src=<%=project.project_cover%>> </div>
+
 </body>
+
 </html>
-
-
-

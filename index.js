@@ -19,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/projects')
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
 
@@ -40,7 +40,7 @@ app.get('/projects', async (req, res) => {
 app.get('/projects/:id/edit', async (req, res) => {
     const { id } = req.params;
     const project = await Project.findById(id)
-    res.render("projects/edit.ejs", {project})
+    res.render("projects/edit.ejs", { project })
 });
 
 app.put('/projects/:id', async (req, res) => {
@@ -53,7 +53,7 @@ app.get('/projects/:id', async (req, res) => {
     const { id } = req.params;
     const project = await Project.findById(id)
     // res.send(project) 
-    res.render("projects/show.ejs", {project})
+    res.render("projects/show.ejs", { project })
 });
 
 app.post("/projects", async (req, res) => {
@@ -63,17 +63,12 @@ app.post("/projects", async (req, res) => {
 });
 
 app.delete("/projects/:id", async (req, res) => {
-    const {id} = req.params;
-    const deleteProject = await Project.findOneAndDelete(id)
+    const { id } = req.params;
+    const deleteProject = await Project.findByIdAndDelete(id)
     res.redirect("/projects")
-})
+});
 
-// app.delete('/projects/:id', async (req, res) => {
-//     const { id } = req.params;
-//     const project = await Project.findById(id)
-//     Project.project.deleteOne()
-//     res.render("projects/show.ejs", {project})
-// });
+
 
 
 
