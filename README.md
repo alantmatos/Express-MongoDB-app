@@ -1,6 +1,6 @@
 Hello.
 
-This is a simples CRUD app, built while experimenting and using Ruby, express for Frontend + MongoDB for Backend.
+This is a simples CRUD app, built while experimenting and Express + MongoDB for Backend.
 
 As it is now, all the CRUD functionalities work.
 
